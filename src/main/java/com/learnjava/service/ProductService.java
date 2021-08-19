@@ -15,6 +15,11 @@ public class ProductService {
         this.reviewService = reviewService;
     }
 
+    /*
+        Pros : This method is very intuitive and its synchronous and sequential.
+        Cons : Blocking nature. Meaning the review service will only be invoked after the
+               product service called returns. even though its not dependent on the product.
+     */
     public Product retrieveProductDetails(String productId) {
         stopWatch.start();
 
