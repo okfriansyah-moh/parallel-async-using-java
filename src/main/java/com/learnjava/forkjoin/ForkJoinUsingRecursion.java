@@ -14,7 +14,7 @@ import static com.learnjava.util.LoggerUtil.log;
 
 public class ForkJoinUsingRecursion extends RecursiveTask<List<String>> {
     private List<String> inputList;
-
+    // Fork join is introduced in java 7
     public ForkJoinUsingRecursion(List<String> names) {
         this.inputList = names;
     }
@@ -39,6 +39,8 @@ public class ForkJoinUsingRecursion extends RecursiveTask<List<String>> {
     }
 
     // This is the method to implement the fork and join method
+    // This is not developer friendly. because of how complex it is
+    // Then streaming API was released as part of java 8 for data parallelism to replace this
     @Override
     protected List<String> compute() {
         // this is the process of transformation when the recursion method gets input list of size <= 1
